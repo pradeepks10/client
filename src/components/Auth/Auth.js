@@ -67,23 +67,23 @@ const Auth = () => {
     //     },
     //   });
 
-    const googleSuccess = async(res) =>{
+    // const googleSuccess = async(res) =>{
        
-        const result =jwt_decode(res?.credential);
-        console.log(result);
-        try {
-            dispatch({type:'AUTH', data:{result}});
-            history.push('/');
-        } catch (error) {
-            console.log(error);
-        }
-    };
+    //     const result =jwt_decode(res?.credential);
+    //     console.log(result);
+    //     try {
+    //         dispatch({type:'AUTH', data:{result}});
+    //         history.push('/');
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
 
-    const googleFailure = (error)=> {
+    // const googleFailure = (error)=> {
 
-        console.log("google sign in is fail")
-        console.log(error);
-    }
+    //     console.log("google sign in is fail")
+    //     console.log(error);
+    // }
     
 
     return (
@@ -130,10 +130,10 @@ const Auth = () => {
                         onFailure ={googleFailure} 
                         cookiePolicy="single_host_origin"    
                      /> */}
-                     <GoogleLogin
+                     {/* <GoogleLogin
                         onSuccess={googleSuccess}
                         onError={googleFailure}
-                        />
+                        /> */}
 
                         {/* <Button onClick={() => login()}>
                         Sign in with Google 🚀{' '}
@@ -151,7 +151,3 @@ const Auth = () => {
 
 export default Auth;
 
-//clientid
-// 150474296342-jb7gajiorhbfpjqelbko6e1rha6dlfu8.apps.googleusercontent.com
-//client secret
-// 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
