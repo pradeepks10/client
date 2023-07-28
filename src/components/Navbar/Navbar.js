@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react';
 
 import {AppBar, Avatar, Button, Toolbar, Typography} from '@material-ui/core';
 import useStyles from './styles';
-import memories from '../../images/memories.png';
+import memories from '../../images/Socio_blog.png';
 import {Link, useHistory, useLocation} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import jwt_decode from 'jwt-decode';
@@ -48,8 +48,9 @@ const logout = () => {
     return (
         <AppBar className={classes.appBar} position='static' color='inherit'>
                 <div className={classes.brandContainer}>
+                <img  className={classes.image} src ={memories} alt='memories' height='60' />
                     <Typography component={Link} to="/" className={classes.heading} variant='h2' align='center'>Socio-BLOG</Typography>
-                    <img  className={classes.image} src ={memories} alt='memories' height='60' />
+                    
                 </div>  
                 <Toolbar>
                     {/* if user is login so his/her profile otherwise login option */}
