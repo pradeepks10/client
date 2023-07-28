@@ -36,6 +36,10 @@ const Post = ({post,setCurrentId}) => {
       const openPost = () =>{
         history.push(`/posts/${post._id}`);
       };
+      const handleUpdate = (e) =>{
+        e.stopPropagation();
+        setCurrentId(post._id);
+      };
 
 
     return (
@@ -48,7 +52,7 @@ const Post = ({post,setCurrentId}) => {
                 </div>
                 {(user?.result?.googleId === post?.creator || user?.result?._id === post?.creator) && (
                     <div className={classes.overlay2}>
-                        <Button onClick={() => setCurrentId(post._id)} style={{ color: 'white' }} size="small">
+                        <Button onClick={handleUpdate} style={{ color: 'white' , cursor :'default' }} size="small">
                             <MoreHorizIcon fontSize="medium" />
                         </Button>
                     </div>
